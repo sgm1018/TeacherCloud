@@ -8,6 +8,7 @@ import com.teachercloud.repository.utils.RList;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class EntidadService<T extends Entidad> implements IEntidadService<T> {
 
     protected final EntidadRepository<T> repository;
-
+    
     public EntidadService(EntidadRepository<T> repository) {
         this.repository = repository;
     }
