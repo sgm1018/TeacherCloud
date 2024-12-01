@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1>Login</h1>
-    <form th:action="@{/login}" th:object="${userLoginDto}" method="post">
-        <div>
+
+<body style="position: absolute; display: flex; width: 100%; padding: 100px; height: 100%; justify-content: center; align-items: center;">
+    <form  th:action="@{/login}" th:object="${userLoginDto}" method="post">
+        <h1>Login</h1>  
+        <div >
             <label for="username">Username:</label>
             <input type="text" id="username" th:field="*{email}" />
         </div>
@@ -19,4 +22,5 @@
         </div>
     </form>
 </body>
+
 </html>

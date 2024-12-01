@@ -7,5 +7,6 @@ import com.teachercloud.model.Entidad;
 
 @Repository
 public interface EntidadRepository<T extends Entidad> extends JpaRepository<T, Long> {
+    
 }
 

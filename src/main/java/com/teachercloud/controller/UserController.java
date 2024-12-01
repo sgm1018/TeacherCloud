@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
 
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -30,7 +30,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public String getAllUsers(Model model) {
+    public String getAllUsers(Model model) throws ResponseStatusException {
         var datos = userService.GetAll();
         if (datos.result() != 0 ){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Erorr: " + datos.msg());
@@ -41,7 +41,7 @@ public class UserController {
 
 
     @GetMapping("/{id}")
-    public String getUserById(@RequestParam("id") Long id, Model model) {
+    public String getUserById(@RequestParam("id") Long id, Model model) throws ResponseStatusException {
         var datos = userService.GetById(id);
         if (datos.result() != 0 ){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Errpr:" + datos.msg());
@@ -57,7 +57,7 @@ public class UserController {
     }
 
     @PostMapping
-    public String createUser(@ModelAttribute User user, Model model) {
+    public String createUser(@ModelAttribute User user, Model model) throws ResponseStatusException {
         var datos = userService.add(user);
         if (datos.result() != 0 ){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error: " + datos.msg());
@@ -66,7 +66,7 @@ public class UserController {
     }
 
     @PutMapping("edit/{id}")
-    public String updateUser(@PathVariable String id, @ModelAttribute User user) {
+    public String updateUser(@PathVariable String id, @ModelAttribute User user) throws ResponseStatusException {
         var datos = userService.update(user);
         if (datos.result() != 0 ){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error: " + datos.msg());
@@ -75,8 +75,8 @@ public class UserController {
         return "redirect:/user"; 
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteUser(@PathVariable Long id) {
+    @DeleteMapping("/delete/{id}") 
+    public String deleteUser(@PathVariable Long id) throws ResponseStatusException {
         var datos = userService.remove(id);
         if (datos.result() != 0 ){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error: " + datos.msg());
