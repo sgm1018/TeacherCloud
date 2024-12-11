@@ -13,10 +13,9 @@ import java.util.function.Function;
 
 @Component
 public class JwtTokenProvider {
-
+    //Inyectamos los valores del application.properties
     @Value("${jwt.secret}")
     private String secret;
-
     @Value("${jwt.expiration}")
     private long expiration;
 
@@ -38,6 +37,12 @@ public class JwtTokenProvider {
         return getClaimFromToken(token, Claims::getExpiration);
     }
 
+    //ClaimResolver es una funcion que se pasa a traves de Claims::FuncionQueMeDevuelve el claim que quiero
+    //<Fuction<Claims, T> claimsResolver> es una funcion que recibe un Claims y devuelve un T
+    //Usar Claims:: es una forma de pasar funciones como argumento a las funciones, ya que son funciones definidas en la clase Claims 
+    //y no la funcion a la que entra como argumento, entiende que tienen que llamar a esa funcion.
+    //posteriormete el .apply llama a la funcion que se paso como argumento
+    //En conclusion, es una forma de hacer un metodo generico para obtener cualquier tipo de CLAIM.
     public <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = getAllClaimsFromToken(token);
         return claimsResolver.apply(claims);

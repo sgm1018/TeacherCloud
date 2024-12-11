@@ -3,10 +3,7 @@ package com.teachercloud.Security;
 import org.springframework.stereotype.Service;
 
 import com.teachercloud.model.User;
-import com.teachercloud.repository.EntidadRepository;
-import java.util.Optional;
 import com.teachercloud.repository.UserRepository;
-import com.teachercloud.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
