@@ -7,6 +7,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,6 +28,20 @@ public class User extends Entidad {
 
     @OneToMany(mappedBy = "recipient")
     private List<Message> receivedMessages;
+
+    public User() {
+    }
+
+    public User(String firstName, String lastName, String email, String password, String role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.courses = new ArrayList<Course>();
+        this.sentMessages = new ArrayList<Message>();
+        this.receivedMessages = new ArrayList<Message>();
+    }
 
     // Getters y setters
     public String getFirstName() {

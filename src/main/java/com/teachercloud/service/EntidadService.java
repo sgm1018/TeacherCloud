@@ -8,7 +8,7 @@ import com.teachercloud.repository.utils.RList;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 
@@ -16,9 +16,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class EntidadService<T extends Entidad> implements IEntidadService<T> {
 
-    protected final EntidadRepository<T> repository;
+    protected final JpaRepository<T, Long> repository;
     
-    public EntidadService(EntidadRepository<T> repository) {
+    public EntidadService(JpaRepository<T, Long> repository) {
         this.repository = repository;
     }
 
@@ -44,8 +44,8 @@ public class EntidadService<T extends Entidad> implements IEntidadService<T> {
 
     @Override
     public RItem<T> add(T entity) {
-        if (repository.existsById(entity.getId())) {
-            return new RItem<T>(1, "Entity already exists", null);
+        if (entity.getId() != null && repository.existsById(entity.getId())) {
+            return new RItem<T>(1, "Entity already exists", null);  
         }else{
             T data = repository.save(entity);
             return new RItem<T>(0, "Ok", data);
