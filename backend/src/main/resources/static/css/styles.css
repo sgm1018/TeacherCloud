@@ -1,0 +1,141 @@
+
+
+
+:root{
+    font-family: 'Roboto', sans-serif;
+    --p1-50: #e0f2ff;
+    --p1-100: #b3e5ff;
+    --p1-200: #80d4ff;
+    --p1-300: #4dc3ff;
+    --p1-400: #1ab2ff;
+    --p1-500: #0099e6;
+    --p1-600: #007acc;
+    --p1-700: #005cb3;
+    --p1-800: #004099;
+    --p1-900: #002680;
+
+    --bg-50: #e6e5e5;
+
+    --text : #000;
+    --card: #fff;
+}
+
+
+.dark{
+    --p1-50: #002680;
+    --p1-100: #004099;
+    --p1-200: #005cb3;
+    --p1-300: #007acc;
+    --p1-400: #0099e6;
+    --p1-500: #1ab2ff;
+    --p1-600: #4dc3ff;
+    --p1-700: #80d4ff;
+    --p1-800: #b3e5ff;
+    --p1-900: #e0f2ff;
+
+    --bg-50: #111111;
+
+    --text: #fff;
+    --card: #000;
+}
+
+
+.card{
+    background-color: var(--card);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+h1{
+    color: var(--p1-500);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+h2{
+    color: var(--p1-500);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+h3{
+    color: var(--p1-500);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+span{
+    color: var(--p1-500);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+p{
+    color: var(--text);
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+code{
+    color: var(--p1-500);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--p1-500);
+    margin: 10px 0;
+}
+
+select{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--p1-500);
+    margin: 10px 0;
+}
+
+button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--p1-500);
+    background-color: var(--p1-500);
+    color: var(--text);
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--p1-600);
+}
+
+button:disabled{
+    background-color: var(--p1-200);
+    color: var(--p1-500);
+    cursor: not-allowed;
+}
+
+button:disabled:hover{
+    background-color: var(--p1-200);
+}
+
+button:active{
+    background-color: var(--p1-700);
+}
+
+button:focus{
+    outline: none;
+}
+
+button:active:focus{
+    outline: none;
+}

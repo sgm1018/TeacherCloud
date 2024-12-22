@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Debug Spring Boot App",
+        "request": "launch",
+        "mainClass": "com.teachercloud.TeachercloudApplication", // Cambia esta clase por tu clase principal
+        "projectName": "teachercloud" // Cambia por el nombre de tu proyecto
+      }
+    ]
+  }
+  
