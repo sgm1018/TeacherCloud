@@ -40,12 +40,11 @@
 
 
 span {
-  font-size: 1.2rem;
-  color: var(--primary-500);
+  color: var(--text);
 }
 
 a {
-  color: var(--primary-500);
+  color: var(--text);
 }
 
 p {

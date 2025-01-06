@@ -17,6 +17,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
 import { ForumPageComponent } from './pages/forum-page/forum-page.component';
 import { SubjectPageComponent } from './pages/subject-page/subject-page.component';
 import { CoursePageComponent } from './pages/course-page/course-page.component';
+import { MiddleContentComponent } from './components/main/body/middle-content/middle-content.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CoursePageComponent } from './pages/course-page/course-page.component';
     UserPageComponent,
     ForumPageComponent,
     SubjectPageComponent,
-    CoursePageComponent
+    CoursePageComponent,
+    MiddleContentComponent
   ],
   imports: [
     BrowserModule,
