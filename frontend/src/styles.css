@@ -17,7 +17,8 @@
   --text: #424242;
   --text-button: #212121;
 
-  --header: #061724
+  --header: #061724;
+  --header-height: 60px;
 }
 
 /* Dark Mode */
@@ -29,9 +30,28 @@
   --accent-500: #6a3ac4;
   --accent-600: #5315cc;
 
-  --bg-100: #121216;
-  --bg-200: #15141c;
-
+  --bg-100: #090c18;
+  --bg-200: #092235;
   --text: #e0e0e0;
   --text-button: #ffffff;
+  --header: #090c18;
+
+}
+
+
+span {
+  font-size: 1.2rem;
+  color: var(--primary-500);
+}
+
+a {
+  color: var(--primary-500);
+}
+
+p {
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
 }
