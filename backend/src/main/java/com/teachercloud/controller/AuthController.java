@@ -48,7 +48,8 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserLoginDto userLoginDto) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Authentication authentication = (JwtAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+
         
         var datos = userService.findByEmail(userLoginDto.getEmail());
         if (datos.result()  != 0) {
